@@ -29,6 +29,7 @@
                 <div class="messages">
                     @foreach ($servicio->mensajes as $mensaje)
                     <div class="message">
+                        {{ $servicio->created_at->format('d-m-Y H:m') }}<br>
                         {{ $mensaje->autor->nombre }}: {{ $mensaje->texto }}<br>
                         @if ($mensaje->archivo_adjunto)
                         <a class="btn btn-link" href="{{ asset("/storage/mensajes/{$mensaje->archivo_adjunto}") }}"
