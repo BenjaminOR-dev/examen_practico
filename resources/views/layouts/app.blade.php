@@ -30,6 +30,18 @@
                     </li>
                 </ul>
             </div>
+            <div class="d-flex">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="btn btn-primary" href="{{ route('auth.login.form') }}">
+                            Acceder
+                        </a>
+                        <a class="btn btn-secondary" href="{{ route('auth.register.form') }}">
+                            Registro
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
