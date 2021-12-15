@@ -7,7 +7,7 @@
 <div class="my-5" style="margin-left: 50px;">
     <div class="row">
         <div class="col">
-            <img src="{{ asset("/storage/servicios/{$servicio->imagen}") }}" style="max-height: 200px">
+            <img src="{{ asset("/storage/servicios/{$servicio->imagen}") }}" style="max-height: 200px;" class="mb-3">
             <h5 class="card-title">{{ $servicio->titulo }}</h5>
             <p class="card-text">{{ $servicio->descripcion }}</p>
             <span class="font-italic">Precio: ${{ $servicio->precio }}</span><br>
