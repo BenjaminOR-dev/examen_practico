@@ -10,4 +10,9 @@ class AppController extends Controller
     {
         return view('app.inicio');
     }
+
+    public function servicios()
+    {
+        return view('app.servicios');
+    }
 }

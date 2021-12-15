@@ -16,4 +16,13 @@ use App\Http\Controllers as Controller;
 
 Route::name('app.')->group(function () {
     Route::get('/', [Controller\AppController::class, 'inicio'])->name('inicio');
+    Route::get('servicios', [Controller\AppController::class, 'servicios'])->name('servicios');
+});
+
+Route::name('auth.')->prefix('/auth')->group(function () {
+    Route::get('login', [Controller\AuthController::class, 'login'])->name('login');
+});
+
+Route::name('crud.')->prefix('/crud')->group(function () {
+    //
 });
