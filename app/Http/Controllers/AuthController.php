@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\AppHelpers;
 use App\Models\Usuarios;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
@@ -55,6 +56,7 @@ class AuthController extends Controller
             auth()->logout();
         }
 
-        return redirect()->route('auth.login.form');
+        return redirect()->route('app.inicio')
+            ->with(AppHelpers::alert('Listo', 'Tu sesión se ha cerrado correctamente'));
     }
 }
