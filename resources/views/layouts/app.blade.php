@@ -58,6 +58,7 @@
         @yield('content')
     </div>
 
+    @include('components.alert')
     @yield('scripts')
 </body>
 

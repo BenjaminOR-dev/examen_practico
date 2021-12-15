@@ -32,10 +32,8 @@ class AuthController extends Controller
             ->first();
 
         if (!$user) {
-            $validation = ['email' => 'El email ingresado no se encuentra en nuestros registros'];
-        }
-
-        if (!password_verify($request->password, $user->password)) {
+            $validation = ['user' => 'El usuario ingresado no se encuentra en nuestros registros'];
+        } elseif (!password_verify($request->password, $user->password)) {
             $validation = ['password' => 'La contraseña es incorrecta'];
         }
 

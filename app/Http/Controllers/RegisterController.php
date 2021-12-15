@@ -38,6 +38,6 @@ class RegisterController extends Controller
         ]);
 
         return redirect()->route('auth.login.form')
-            ->with(AppHelpers::alert('Listo', 'Te has registrado correctamente'));
+            ->with(AppHelpers::alert('Listo', 'Te has registrado correctamente, ahora ya puedes iniciar sesión'));
     }
 }
