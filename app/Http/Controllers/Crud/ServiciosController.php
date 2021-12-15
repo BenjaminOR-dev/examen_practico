@@ -144,6 +144,7 @@ class ServiciosController extends Controller
         }
 
         $this->deleteFile($servicio->imagen);
+        $servicio->mensajes()->delete();
         $servicio->delete();
 
         return $this->returnIndex('Listo', 'Se ha eliminado tu servicio');
