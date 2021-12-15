@@ -11294,7 +11294,7 @@ textarea.form-control-lg {
   padding: 16px;
 }
 
-.message {
+.messages .message {
   display: block;
   width: 100%;
   border-radius: 99px;

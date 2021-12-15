@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Servicios extends Model
+class Mensajes extends Model
 {
     use HasFactory;
 
-    protected $table = 'servicios';
+    protected $table = 'mensajes';
     protected $primaryKey = 'id';
 
     /**
@@ -19,11 +19,9 @@ class Servicios extends Model
      */
     protected $fillable = [
         'id_autor',
-        'slug',
-        'imagen',
-        'titulo',
-        'descripcion',
-        'precio'
+        'id_servicio',
+        'texto',
+        'archivo_adjunto'
     ];
 
     /**
@@ -31,17 +29,11 @@ class Servicios extends Model
      */
 
     protected $with = [
-        'autor',
-        'mensajes'
+        'autor'
     ];
 
     public function autor()
     {
         return $this->hasOne(Usuarios::class, 'id', 'id_autor');
-    }
-
-    public function mensajes()
-    {
-        return $this->hasMany(Mensajes::class, 'id_servicio', 'id');
     }
 }

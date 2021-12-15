@@ -23,7 +23,11 @@
             @else
                 <h3>Enviale un mensaje</h3><hr>
                 <div class="container">
-                    <div class="messages"></div>
+                    <div class="messages">
+                        @foreach ($servicio->mensajes() as $mensaje)
+                            <div class="message">{{ $mensaje->autor->nombre }}: {{ $mensaje->texto }}</div>
+                        @endforeach
+                    </div>
                     <form action="" method="POST" style="max-width: 500px">
                         @csrf
                         <div class="input-group-text">
