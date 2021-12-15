@@ -14,12 +14,26 @@
             <span class="font-italic text-success">{{ $servicio->created_at->diffForHumans() }}</span><br>
             <span class="font-italic text-primary">{{ $servicio->autor->nombre_completo }}</span>
         </div>
-        @auth
         <div class="col">
-            <h3>Enviale un mensaje</h3>
-            <hr>
+            @guest
+                <h3>Para enviar mensajes primero debes iniciar sesión</h3><hr>
+                <div class="container">
+                    ¿No tienes una cuenta? <a class="btn btn-link" href="{{ route('auth.register.form') }}">haz clic aquí para crear una</a>
+                </div>
+            @else
+                <h3>Enviale un mensaje</h3><hr>
+                <div class="container">
+                    <div class="messages"></div>
+                    <form action="" method="POST" style="max-width: 500px">
+                        @csrf
+                        <div class="input-group-text">
+                            <input id="message" name="message" type="text" class="form-control" placeholder="Escribe algo..." required>
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+            @endguest
         </div>
-        @endauth
     </div>
 </div>
 @endsection

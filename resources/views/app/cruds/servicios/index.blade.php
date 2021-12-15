@@ -3,8 +3,7 @@
 
 @section('content')
 <h2>
-    Tus servicios publicados <a class="btn btn-primary" href="{{ route('dashboard.servicios.create') }}">Registrar
-        nuevo</a>
+    Tus servicios <a class="btn btn-primary" href="{{ route('dashboard.servicios.create') }}">Registrar nuevo</a>
 </h2>
 <hr>
 <div class="my-3">

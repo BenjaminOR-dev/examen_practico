@@ -2,7 +2,7 @@
 @section('title', 'Inicio')
 
 @section('content')
-<h2>Servicios</h2>
+<h2>Servicios Públicos</h2>
 <hr>
 <div class="my-3">
     <div class="row">

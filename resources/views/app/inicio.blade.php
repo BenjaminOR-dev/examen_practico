@@ -16,7 +16,7 @@
         </a>
         @endauth
         <a class="btn btn-secondary" href="{{ route('app.servicios') }}">
-            Ver los servicios
+            Ver los servicios públicos
         </a>
     </p>
 </div>

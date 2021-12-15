@@ -27,7 +27,7 @@
                         <a class="nav-link" href="{{ route('app.inicio') }}">Inicio</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('app.servicios') }}">Servicios</a>
+                        <a class="nav-link" href="{{ route('app.servicios') }}">Servicios Públicos</a>
                     </li>
                     @auth
                     <li class="nav-item">
