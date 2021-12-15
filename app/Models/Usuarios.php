@@ -60,4 +60,15 @@ class Usuarios extends Authenticatable
     {
         return "{$this->nombre} {$this->apellido_paterno} {$this->apellido_materno}";
     }
+
+    /**
+     * Relaciones
+     */
+
+    protected $with = [];
+
+    public function servicios()
+    {
+        return $this->hasMany(Servicios::class, 'id_autor', 'id');
+    }
 }

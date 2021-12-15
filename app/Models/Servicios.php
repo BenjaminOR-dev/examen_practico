@@ -24,4 +24,15 @@ class Servicios extends Model
         'descripcion',
         'precio'
     ];
+
+    /**
+     * Relaciones
+     */
+
+    protected $with = [];
+
+    public function autor()
+    {
+        return $this->hasOne(Usuarios::class, 'id', 'id_autor');
+    }
 }
