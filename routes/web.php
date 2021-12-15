@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers as Controller;
+use App\Http\Controllers\Crud;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,6 @@ Route::name('auth.')->prefix('/auth')->group(function () {
     Route::post('register', [Controller\RegisterController::class, 'post'])->name('register.post');
 });
 
-Route::name('crud.')->prefix('/crud')->middleware('auth')->group(function () {
-    //
+Route::name('dashboard.')->prefix('/dashboard')->middleware('auth')->group(function () {
+    Route::resource('servicios', Crud\ServiciosController::class)->names('servicios');
 });

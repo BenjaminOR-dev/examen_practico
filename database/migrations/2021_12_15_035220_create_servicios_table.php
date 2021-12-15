@@ -16,6 +16,7 @@ class CreateServiciosTable extends Migration
         Schema::create('servicios', function (Blueprint $table) {
             $table->id();
             $table->foreignId('id_autor')->constrained('usuarios', 'id');
+            $table->string('slug', 255)->unique();
             $table->string('imagen');
             $table->string('titulo');
             $table->text('descripcion');

@@ -19,6 +19,7 @@ class Servicios extends Model
      */
     protected $fillable = [
         'id_autor',
+        'slug',
         'imagen',
         'titulo',
         'descripcion',
