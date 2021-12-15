@@ -15,7 +15,6 @@ class CreateUsuariosTable extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_rol')->constrained('roles', 'id');
             $table->string('nombre');
             $table->string('apellido_paterno');
             $table->string('apellido_materno');

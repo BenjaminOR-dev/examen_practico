@@ -22,7 +22,6 @@ class Usuarios extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'id_rol',
         'nombre',
         'apellido_paterno',
         'apellido_materno',
@@ -60,18 +59,5 @@ class Usuarios extends Authenticatable
     public function getNombreCompletoAttribute()
     {
         return "{$this->nombre} {$this->apellido_paterno} {$this->apellido_materno}";
-    }
-
-    /**
-     * Relaciones
-     */
-
-    protected $with = [
-        'rol'
-    ];
-
-    public function rol()
-    {
-        return $this->hasOne(Roles::class, 'id', 'id_rol');
     }
 }

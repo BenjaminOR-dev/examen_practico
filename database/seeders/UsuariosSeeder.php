@@ -18,7 +18,6 @@ class UsuariosSeeder extends Seeder
 
         Usuarios::insert([
             [
-                'id_rol'           => 1,
                 'nombre'           => 'Roberto',
                 'apellido_paterno' => 'Darío',
                 'apellido_materno' => 'Hernández',
@@ -26,7 +25,6 @@ class UsuariosSeeder extends Seeder
                 'password'         => bcrypt('password')
             ],
             [
-                'id_rol'           => 2,
                 'nombre'           => 'Carlos',
                 'apellido_paterno' => 'González',
                 'apellido_materno' => 'Estrada',
