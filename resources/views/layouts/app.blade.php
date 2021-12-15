@@ -10,6 +10,7 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css">
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    @yield('styles')
 </head>
 
 <body>
