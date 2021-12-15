@@ -14,6 +14,7 @@ Route::name('app.')->group(function () {
     Route::get('/', [Controller\AppController::class, 'inicio'])->name('inicio');
     Route::get('servicios', [Controller\AppController::class, 'servicios'])->name('servicios');
     Route::get('servicio/{slug}', [Controller\AppController::class, 'ver_servicio'])->name('ver-servicio');
+    Route::post('servicio/mensaje', [Controller\AppController::class, 'guardarMensaje'])->name('guardar-mensaje');
 });
 
 Route::name('auth.')->prefix('/auth')->middleware('guest')->group(function () {

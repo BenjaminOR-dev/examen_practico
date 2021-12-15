@@ -18,7 +18,7 @@ class CreateMensajesTable extends Migration
             $table->foreignId('id_autor')->constrained('usuarios', 'id');
             $table->foreignId('id_servicio')->constrained('servicios', 'id');
             $table->string('texto');
-            $table->text('archivo_adjunto');
+            $table->text('archivo_adjunto')->nullable();
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent()->useCurrentOnUpdate();
         });

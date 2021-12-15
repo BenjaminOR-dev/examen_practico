@@ -28,10 +28,11 @@
                             <div class="message">{{ $mensaje->autor->nombre }}: {{ $mensaje->texto }}</div>
                         @endforeach
                     </div>
-                    <form action="" method="POST" style="max-width: 500px">
+                    <form action="{{ route('app.guardar-mensaje') }}" method="POST" style="max-width: 500px">
                         @csrf
+                        <input id="id_servicio" name="id_servicio" type="hidden" value="{{ $servicio->id }}">
                         <div class="input-group-text">
-                            <input id="message" name="message" type="text" class="form-control" placeholder="Escribe algo..." required>
+                            <input id="texto" name="texto" type="text" class="form-control" placeholder="Escribe algo..." required>
                             <button type="submit" class="btn btn-primary">Enviar</button>
                         </div>
                     </form>
