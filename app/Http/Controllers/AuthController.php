@@ -9,9 +9,17 @@ use Illuminate\Validation\ValidationException;
 class AuthController extends Controller
 {
     /**
-     * Realiza la autenticación del usuario
+     * Renderiza la vista del formulario de inicio de sesión
      */
-    public function login(Request $request)
+    public function loginForm()
+    {
+        return view('auth.login');
+    }
+
+    /**
+     * Realiza el inicio de sesión
+     */
+    public function loginPost(Request $request)
     {
         $request->validate([
             'user'     => ['required', 'email'],
@@ -38,5 +46,17 @@ class AuthController extends Controller
         auth()->login($user, $request->remember == true ? true : false);
 
         return redirect()->route('app.inicio');
+    }
+
+    /**
+     * Realiza el cierre se sesión
+     */
+    public function logout()
+    {
+        if (!auth()->check()) {
+            auth()->logout();
+        }
+
+        return redirect()->route('auth.login');
     }
 }

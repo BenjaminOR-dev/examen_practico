@@ -20,7 +20,12 @@ Route::name('app.')->group(function () {
 });
 
 Route::name('auth.')->prefix('/auth')->group(function () {
-    Route::get('login', [Controller\AuthController::class, 'login'])->name('login');
+    Route::get('login', [Controller\AuthController::class, 'loginForm'])->name('login.form');
+    Route::post('login', [Controller\AuthController::class, 'loginPost'])->name('login.post');
+    Route::get('logout', [Controller\AuthController::class, 'logout'])->name('logout');
+
+    Route::get('register', [Controller\RegisterController::class, 'form'])->name('register.form');
+    Route::post('register', [Controller\RegisterController::class, 'post'])->name('register.post');
 });
 
 Route::name('crud.')->prefix('/crud')->group(function () {
