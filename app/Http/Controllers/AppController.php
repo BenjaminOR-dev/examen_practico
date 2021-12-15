@@ -35,9 +35,4 @@ class AppController extends Controller
 
         return view('app.servicio', compact('servicio'));
     }
-
-    public function dashboard()
-    {
-        return view('app.dashboard');
-    }
 }

@@ -27,6 +27,8 @@ Route::name('auth.')->prefix('/auth')->middleware('guest')->group(function () {
 });
 
 Route::name('dashboard.')->prefix('/dashboard')->middleware('auth')->group(function () {
-    Route::get('/', [Controller\AppController::class, 'dashboard'])->name('inicio');
+    Route::get('/', function () {
+        return redirect()->route('dashboard.servicios.index');
+    })->name('inicio');
     Route::resource('servicios', Crud\ServiciosController::class)->names('servicios');
 });
