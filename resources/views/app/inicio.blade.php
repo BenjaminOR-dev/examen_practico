@@ -2,7 +2,7 @@
 @section('title', 'Inicio')
 
 @section('content')
-<h2>Bienvenido</h2>
+<h2>Bienvenido @auth {{ auth()->user()->nombre_completo }} @endauth</h2>
 <hr>
 <div class="my-3">
 

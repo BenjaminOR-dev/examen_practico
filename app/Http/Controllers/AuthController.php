@@ -28,7 +28,7 @@ class AuthController extends Controller
         ]);
 
         $user = Usuarios::query()
-            ->where('email', $request->email)
+            ->where('email', $request->user)
             ->first();
 
         if (!$user) {
@@ -53,10 +53,10 @@ class AuthController extends Controller
      */
     public function logout()
     {
-        if (!auth()->check()) {
+        if (auth()->check()) {
             auth()->logout();
         }
 
-        return redirect()->route('auth.login');
+        return redirect()->route('auth.login.form');
     }
 }

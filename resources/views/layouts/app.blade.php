@@ -32,6 +32,7 @@
             </div>
             <div class="d-flex">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    @guest
                     <li class="nav-item">
                         <a class="btn btn-primary" href="{{ route('auth.login.form') }}">
                             Acceder
@@ -40,6 +41,13 @@
                             Registro
                         </a>
                     </li>
+                    @else
+                    <li class="nav-item">
+                        <a class="btn btn-danger" href="{{ route('auth.logout') }}">
+                            Salir
+                        </a>
+                    </li>
+                    @endguest
                 </ul>
             </div>
         </div>

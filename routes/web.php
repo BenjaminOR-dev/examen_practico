@@ -20,10 +20,10 @@ Route::name('app.')->group(function () {
     Route::get('servicios', [Controller\AppController::class, 'servicios'])->name('servicios');
 });
 
-Route::name('auth.')->prefix('/auth')->group(function () {
+Route::name('auth.')->prefix('/auth')->middleware('guest')->group(function () {
     Route::get('login', [Controller\AuthController::class, 'loginForm'])->name('login.form');
     Route::post('login', [Controller\AuthController::class, 'loginPost'])->name('login.post');
-    Route::get('logout', [Controller\AuthController::class, 'logout'])->name('logout');
+    Route::get('logout', [Controller\AuthController::class, 'logout'])->name('logout')->withoutMiddleware('guest');
 
     Route::get('register', [Controller\RegisterController::class, 'form'])->name('register.form');
     Route::post('register', [Controller\RegisterController::class, 'post'])->name('register.post');

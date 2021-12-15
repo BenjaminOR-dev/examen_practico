@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Servicios;
 use Illuminate\Http\Request;
 
 class AppController extends Controller
@@ -13,6 +14,10 @@ class AppController extends Controller
 
     public function servicios()
     {
-        return view('app.servicios');
+        $servicios = Servicios::query()
+            ->orderBy('created_at', 'ASC')
+            ->paginate(10);
+
+        return view('app.servicios', compact('servicios'));
     }
 }
