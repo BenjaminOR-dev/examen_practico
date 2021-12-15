@@ -31,7 +31,7 @@
                     <div class="message">
                         {{ $mensaje->autor->nombre }}: {{ $mensaje->texto }}<br>
                         @if ($mensaje->archivo_adjunto)
-                        <a class="btn btn-link" href="{{ assets("/storage/mensajes/{$mensaje->archivo_adjunto}") }}"
+                        <a class="btn btn-link" href="{{ asset(" /storage/mensajes/{$mensaje->archivo_adjunto}") }}"
                             download="{{ config('app.name') . '_' . $mensaje->archivo_adjunto }}">
                             Descargar archivo adjunto
                         </a>
@@ -42,11 +42,15 @@
                 <form action="{{ route('app.guardar-mensaje') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <input id="id_servicio" name="id_servicio" type="hidden" value="{{ $servicio->id }}">
-                    <div class="input-group-text">
+                    <div class="my-3">
                         <input id="texto" name="texto" type="text" class="form-control" placeholder="Escribe algo..."
                             required>
-                        <button type="submit" class="btn btn-primary">Enviar</button>
                     </div>
+                    <div class="my-3">
+                        <label for="archivo_adjunto" class="form-label">Añade un archivo adjunto: </label>
+                        <input id="archivo_adjunto" name="archivo_adjunto" type="file" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
                 </form>
             </div>
             @endguest
