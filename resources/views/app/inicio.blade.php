@@ -19,6 +19,5 @@
             Ver los servicios
         </a>
     </p>
-
 </div>
 @endsection

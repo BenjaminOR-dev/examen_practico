@@ -8,11 +8,6 @@ use App\Http\Controllers\Crud;
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
 */
 
 Route::name('app.')->group(function () {
@@ -23,6 +18,7 @@ Route::name('app.')->group(function () {
 Route::name('auth.')->prefix('/auth')->middleware('guest')->group(function () {
     Route::get('login', [Controller\AuthController::class, 'loginForm'])->name('login.form');
     Route::post('login', [Controller\AuthController::class, 'loginPost'])->name('login.post');
+
     Route::get('logout', [Controller\AuthController::class, 'logout'])->name('logout')->withoutMiddleware('guest');
 
     Route::get('register', [Controller\RegisterController::class, 'form'])->name('register.form');
