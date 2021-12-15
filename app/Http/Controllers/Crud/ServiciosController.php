@@ -22,7 +22,7 @@ class ServiciosController extends Controller
         $servicios = Servicios::query()
             ->where('id_autor', auth()->id())
             ->orderBy('created_at', 'ASC')
-            ->get();
+            ->paginate(10);
 
         return view('app.cruds.servicios.index', compact('servicios'));
     }

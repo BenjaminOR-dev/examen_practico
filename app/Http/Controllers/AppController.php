@@ -32,6 +32,8 @@ class AppController extends Controller
             return redirect()->route('app.servicios')
                 ->with(AppHelpers::alert('Error', 'No se encontró el servicio indicado', 'error'));
         }
+
+        return view('app.servicio', compact('servicio'));
     }
 
     public function dashboard()
