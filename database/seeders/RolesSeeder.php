@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Roles;
 use Illuminate\Database\Seeder;
 
 class RolesSeeder extends Seeder
@@ -13,6 +14,17 @@ class RolesSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Roles::truncate();
+
+        Roles::insert([
+            [
+                'id'     => 1,
+                'nombre' => 'Administrador'
+            ],
+            [
+                'id'     => 2,
+                'nombre' => 'Cliente'
+            ]
+        ]);
     }
 }
