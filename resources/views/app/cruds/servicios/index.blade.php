@@ -23,7 +23,14 @@
                     <br><br>
                     <a href="{{ route('dashboard.servicios.edit', ['servicio' => $servicio->id]) }}"
                         class="btn btn-primary">Editar</a>
-                    <button class="btn btn-danger">Eliminar</button>
+                    <button class="btn btn-danger"
+                        onclick="eliminarItem('{{ $servicio->id }}', '{{ $servicio->titulo }}')">Eliminar</button>
+                    <form id="formDelete-{{ $servicio->id }}" class="invisible"
+                        action="{{ route('dashboard.servicios.destroy', ['servicio' => $servicio->id]) }}"
+                        method="POST">
+                        @csrf
+                        @method('DELETE')
+                    </form>
                 </div>
             </div>
         </div>
@@ -38,4 +45,24 @@
         @endif
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    const eliminarItem = async (idItem, tituloItem) => {
+        const formDelete = $('#formDelete-'+idItem);
+        await Swal.fire({
+            icon: 'warning',
+            title: 'Atención',
+            text: "Estás a punto de eliminar tu servicio: '" + tituloItem + "'",
+            confirmButtonText: 'Aceptar',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar'
+        }).then(async (res) => {
+            if(res.isConfirmed){
+                formDelete.submit();
+            }
+        });
+    };
+</script>
 @endsection

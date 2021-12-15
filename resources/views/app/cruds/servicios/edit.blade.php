@@ -38,7 +38,7 @@
         </div>
         <div class="text-end">
             <button type="reset" class="btn btn-outline-secondary">Reestablecer</button>
-            <button type="submit" class="btn btn-primary">Publicar</button>
+            <button type="submit" class="btn btn-primary">Actualizar</button>
         </div>
     </form>
 </div>
