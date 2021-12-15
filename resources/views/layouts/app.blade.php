@@ -29,6 +29,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('app.servicios') }}">Servicios</a>
                     </li>
+                    @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('dashboard.inicio') }}">Dashboard</a>
+                    </li>
+                    @endauth
                 </ul>
             </div>
             <div class="d-flex">
