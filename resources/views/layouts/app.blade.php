@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}" />
     <link href="{{ mix('css/app.css') }}" rel="stylesheet" type="text/css">
     <script src="{{ mix('js/app.js') }}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>

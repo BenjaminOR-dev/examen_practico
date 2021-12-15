@@ -44,7 +44,7 @@
             </div>
             <div class="my-3 col">
                 <label for="password_confirmation">Confirmar contraseña: *</label>
-                <input id="password_confirmation" name="password" type="password" class="form-control"
+                <input id="password_confirmation" name="password_confirmation" type="password" class="form-control"
                     value="{{ old('password_confirmation') }}" placeholder="******" required>
                 @error('password_confirmation')<span class="text-danger font-italic">{{ $message }}</span>@enderror
             </div>

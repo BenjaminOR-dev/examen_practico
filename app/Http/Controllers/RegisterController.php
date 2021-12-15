@@ -26,7 +26,7 @@ class RegisterController extends Controller
             'apellido_paterno' => ['required', 'string'],
             'apellido_materno' => ['required', 'string'],
             'email'            => ['required', 'email'],
-            'password'         => ['required', 'string']
+            'password'         => ['required', 'confirmed', 'string']
         ]);
 
         Usuarios::create([
