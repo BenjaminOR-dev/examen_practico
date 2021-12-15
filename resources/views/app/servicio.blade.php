@@ -31,7 +31,7 @@
                     <div class="message">
                         {{ $mensaje->autor->nombre }}: {{ $mensaje->texto }}<br>
                         @if ($mensaje->archivo_adjunto)
-                        <a class="btn btn-link" href="{{ asset(" /storage/mensajes/{$mensaje->archivo_adjunto}") }}"
+                        <a class="btn btn-link" href="{{ asset("/storage/mensajes/{$mensaje->archivo_adjunto}") }}"
                             download="{{ config('app.name') . '_' . $mensaje->archivo_adjunto }}">
                             Descargar archivo adjunto
                         </a>
