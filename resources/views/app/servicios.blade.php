@@ -13,10 +13,8 @@
             <h5 class="card-title">{{ $servicio->titulo }}</h5>
             <p class="card-text">{{ $servicio->descripcion }}</p>
             <span class="font-italic">${{ $servicio->precio }}</span>
-            <a href="{{ route('dashboard.servicios.edit', ['servicio' => $servicio->id]) }}"
-                class="btn btn-primary">Editar</a>
-            <a href="{{ route('dashboard.servicios.destroy', ['servicio' => $servicio->id]) }}"
-                class="btn btn-danger">Eliminar</a>
+            <a href="{{ route('app.ver-servicio', ['slug' => $servicio->slug]) }}"
+                class="btn btn-primary">Ver</a>
         </div>
     </div>
     @endforeach
