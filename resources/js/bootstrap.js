@@ -30,3 +30,17 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/* JQuery */
+window.$ = window.jQuery = require('jquery');
+
+/* SweetAlert2 */
+const Swal = require("sweetalert2");
+window.Swal = Swal.mixin({
+    customClass: {
+        confirmButton: "btn btn-primary",
+        cancelButton: "btn btn-danger",
+    },
+    buttonsStyling: false,
+    heightAuto: false,
+});
