@@ -28,6 +28,6 @@ Route::name('auth.')->prefix('/auth')->group(function () {
     Route::post('register', [Controller\RegisterController::class, 'post'])->name('register.post');
 });
 
-Route::name('crud.')->prefix('/crud')->group(function () {
+Route::name('crud.')->prefix('/crud')->middleware(['checkRole:1'])->group(function () {
     //
 });

@@ -21,11 +21,8 @@ class CheckRole
             return redirect()->route('auth.login.form');
         }
 
-        $auth = auth()->user();
-
-        if (!in_array($auth->id_rol, explode('|', $roles))) {
-            return redirect()->route('app.inicio')
-               ->with(AppHelpers::alert('No autorizado', 'No tienes los permisos necesarios para acceder a este módulo', 'error'));
+        if (!in_array(auth()->user()->id_rol, explode('|', $roles))) {
+            return abort(403);
         }
 
         return $next($request);
