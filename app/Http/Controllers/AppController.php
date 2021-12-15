@@ -81,7 +81,7 @@ class AppController extends Controller
     private function saveFile($file)
     {
         $filename = Str::Slug(config('app.name'), '-') . "_" . rand() . "_" . $file->getClientOriginalName();
-        Storage::disk('servicios')->put($filename, File::get($file));
+        Storage::disk('mensajes')->put($filename, File::get($file));
         return $filename;
     }
 }
