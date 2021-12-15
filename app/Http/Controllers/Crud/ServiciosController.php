@@ -112,7 +112,7 @@ class ServiciosController extends Controller
             'imagen'      => ['nullable', 'image', 'mimes:png,jpg,jpeg', 'max:10000'],
             'titulo'      => ['required', 'string', 'max:255'],
             'descripcion' => ['required', 'string'],
-            'precio'      => ['required', 'string']
+            'precio'      => ['required', 'numeric']
         ]);
 
         if ($request->file('imagen')) {
