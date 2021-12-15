@@ -46,7 +46,7 @@ class ServiciosController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'imagen'      => ['required', 'image', 'mimes:png,jpg,jpeg', 'max:10000'],
+            'imagen'      => ['required', 'mimes:png,jpg,jpeg', 'image','max:10000'],
             'titulo'      => ['required', 'string', 'max:255'],
             'descripcion' => ['required', 'string'],
             'precio'      => ['required', 'string']

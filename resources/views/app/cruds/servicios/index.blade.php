@@ -14,8 +14,9 @@
         <img src="..." class="card-img-top">
         <div class="card-body">
             <h5 class="card-title">{{ $servicio->titulo }}</h5>
-            <p class="card-text">{{ $servicio->descripcion }}</p>
-            <span class="font-italic">${{ $servicio->precio }}</span>
+            <p class="card-text">{{ Str::limit($servicio->descripcion, 255, '...') }}</p>
+            <span class="font-italic">Precio: ${{ $servicio->precio }}</span>
+            <br><br>
             <a href="{{ route('dashboard.servicios.edit', ['servicio' => $servicio->id]) }}"
                 class="btn btn-primary">Editar</a>
             <a href="{{ route('dashboard.servicios.destroy', ['servicio' => $servicio->id]) }}"
