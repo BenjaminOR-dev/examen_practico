@@ -24,7 +24,7 @@
                 <h3>Enviale un mensaje</h3><hr>
                 <div class="container">
                     <div class="messages">
-                        @foreach ($servicio->mensajes() as $mensaje)
+                        @foreach ($servicio->mensajes as $mensaje)
                             <div class="message">{{ $mensaje->autor->nombre }}: {{ $mensaje->texto }}</div>
                         @endforeach
                     </div>
