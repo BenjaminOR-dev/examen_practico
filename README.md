@@ -11,6 +11,5 @@
 - Instalar las dependecias con el comando "composer install"
 - Crear una base de datos llamada examen_practico
 - Ejecutar las migraciones con el comando "php artisan migrate:fresh"
-- Si NO se utiliza Laragon como servidor!: Abrir en el navegador la carpeta "public" del proyecto para
-    que funcione
+- Si NO se utiliza Laragon como servidor!: Abrir en el navegador la carpeta "public" del proyecto para que funcione o ejecutar el comando "php artisan serve" en consola (No funciona a todos)
 - Registrarse en el sistema y realizar las pruebas correspondientes 
